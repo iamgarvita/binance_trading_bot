@@ -1,172 +1,206 @@
-**Crypto Trading Bot 🤖**
-A simplified Streamlit-based trading bot for Binance Futures Testnet that allows users to place market and limit orders with a clean web interface.
 
-**🚀 Features**
-🔐 Secure API Configuration - Password-protected key input
+# 🤖 Crypto Trading Bot
 
-🎯 Trading Interface - Support for market/limit orders with buy/sell sides
+A simplified **Streamlit-based trading bot** for **Binance Futures Testnet** that allows users to place **market and limit orders** through a clean and responsive web interface.
 
-📊 Account Overview - Real-time balance and portfolio information
+---
 
-📝 Comprehensive Logging - All API interactions and errors logged
+## 🚀 Features
 
-🚀 One-Click Execution - Simple order placement with immediate feedback
+- **🔐 Secure API Configuration** — Password-protected key input  
+- **🎯 Trading Interface** — Support for market and limit orders with buy/sell sides  
+- **📊 Account Overview** — Real-time balance and portfolio information  
+- **📝 Comprehensive Logging** — All API interactions and errors logged  
+- **🚀 One-Click Execution** — Simple order placement with immediate feedback  
+- **📱 Responsive UI** — Clean Streamlit interface that works on all devices  
 
-📱 Responsive UI - Clean Streamlit interface that works on all devices
+---
 
-**🛠 Installation**
-Prerequisites
-Python 3.8+
+## 🛠 Installation
 
-Binance Testnet Account
+### Prerequisites
+- Python **3.8+**
+- Binance **Futures Testnet Account**
 
-Setup Steps
-Clone the repository
+---
 
-bash
+### Setup Steps
+
+#### 1. Clone the repository
+```bash
 git clone <your-repo-url>
 cd trading-bot
-Install dependencies
+```
 
-bash
+#### 2. Install dependencies
+
+```bash
 pip install streamlit python-binance
-Get Binance Testnet API Keys
+```
 
-Visit testnet.binancefuture.com
+#### 3. Get Binance Testnet API Keys
 
-Log in with your GitHub or Binance account
+* Visit [https://testnet.binancefuture.com](https://testnet.binancefuture.com)
+* Log in with your GitHub or Binance account
+* Navigate to **API Management**
+* Generate a new **API Key** and **Secret**
+* ⚠️ **Important:** Save your Secret Key immediately — it won’t be shown again!
 
-Navigate to API Management
+#### 4. Run the application
 
-Generate new API Key and Secret
-
-Important: Save your Secret Key immediately - it won't be shown again!
-
-Run the application
-
-bash
+```bash
 streamlit run trading_bot.py
-📋 Usage
-Configure API Keys
+```
 
-Open the sidebar (click ➡️ in top-left)
+---
 
-Enter your API Key and Secret
+## 📋 Usage
 
-Click "Initialize Bot"
+### 1. Configure API Keys
 
-View Account Info
+* Open the sidebar (click ➡️ in the top-left corner)
+* Enter your **API Key** and **Secret**
+* Click **“Initialize Bot”**
 
-Expand "Account Overview" section
+### 2. View Account Info
 
-Click "Refresh Account Info" to see balances
+* Expand **“Account Overview”** section
+* Click **“Refresh Account Info”** to see balances
 
-Place Orders
+### 3. Place Orders
 
-Select trading pair (e.g., BTCUSDT)
+* Select **trading pair** (e.g., `BTCUSDT`)
+* Choose **order type** (`MARKET` or `LIMIT`)
+* Select **side** (`BUY` or `SELL`)
+* Enter **quantity** and **price** (for limit orders)
+* Click **“Execute Order”**
 
-Choose order type (MARKET/LIMIT)
+---
 
-Select side (BUY/SELL)
+## 🏗 Project Structure
 
-Enter quantity and price (for limit orders)
-
-Click "Execute Order"
-
-🏗 Project Structure
-text
+```text
 trading-bot/
 ├── trading_bot.py          # Main Streamlit application
 ├── requirements.txt        # Python dependencies
-├── trading_bot.log        # Generated log file
-└── README.md              # This file
-🔧 Code Overview
-Main Components
-BasicBot Class: Core trading functionality
+├── trading_bot.log         # Generated log file
+└── README.md               # This file
+```
 
-API client initialization
+---
 
-Order placement (market/limit)
+## 🔧 Code Overview
 
-Account information retrieval
+### Main Components
 
-Streamlit UI: User interface
+#### **BasicBot Class**
 
-API configuration sidebar
+Core trading functionality:
 
-Trading panel
+* API client initialization
+* Order placement (market/limit)
+* Account information retrieval
 
-Account overview
+#### **Streamlit UI**
 
-Log display
+User interface includes:
 
-Key Functions
-place_order(): Execute trades on Binance Futures
+* API configuration sidebar
+* Trading panel
+* Account overview
+* Log display
 
-get_account_info(): Fetch account balances and positions
+---
 
-Comprehensive error handling and logging
+### Key Functions
 
-⚙️ Configuration
-Environment Variables (Optional)
-For enhanced security, you can use environment variables:
+* **`place_order()`** — Execute trades on Binance Futures
+* **`get_account_info()`** — Fetch account balances and positions
 
-bash
+Includes **comprehensive error handling and logging**.
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables (Optional)
+
+For enhanced security, use environment variables:
+
+```bash
 export BINANCE_API_KEY="your_api_key"
 export BINANCE_API_SECRET="your_api_secret"
-Logging
-The application creates trading_bot.log with:
+```
 
-API requests and responses
+---
 
-Order execution details
+### Logging
 
-Error messages for debugging
+The application generates a `trading_bot.log` file containing:
 
-🛡 Security Notes
-🔒 Never commit API keys to version control
+* API requests and responses
+* Order execution details
+* Error messages for debugging
 
-🔒 Use testnet environment only - no real funds
+---
 
-🔒 API keys are stored only in session memory
+## 🛡 Security Notes
 
-🔒 All sensitive inputs are password-protected
+* 🔒 Never commit API keys to version control
+* 🔒 Use **testnet environment only** — no real funds
+* 🔒 API keys are stored only in **session memory**
+* 🔒 All sensitive inputs are password-protected
 
-🐛 Troubleshooting
-Common Issues
-"Invalid API key" error
+---
 
-Verify your API key and secret are correct
+## 🐛 Troubleshooting
 
-Check that you're using Futures Testnet keys
+### Common Issues
 
-"Connection failed" error
+**❌ "Invalid API key" error**
 
-Verify internet connection
+* Verify your API key and secret are correct
+* Ensure you're using **Futures Testnet keys**
 
-Check Binance API status
+**❌ "Connection failed" error**
 
-"Insufficient balance" error
+* Check your internet connection
+* Verify **Binance API status**
 
-Testnet provides virtual funds - wait for reset if needed
+**❌ "Insufficient balance" error**
 
-Logs
-Check trading_bot.log for detailed error information and API responses.
+* Testnet provides virtual funds — wait for reset if needed
 
-📈 Future Enhancements
-Advanced order types (Stop-Limit, OCO)
+---
 
-TWAP execution
+### Logs
 
-Portfolio analytics
+Check `trading_bot.log` for detailed error information and API responses.
 
-Multiple exchange support
+---
 
-Backtesting framework
+## 📈 Future Enhancements
 
-📄 License
-This project is for educational purposes only. Use at your own risk.
+* Advanced order types (Stop-Limit, OCO)
+* TWAP execution
+* Portfolio analytics
+* Multiple exchange support
+* Backtesting framework
 
-⚠️ Disclaimer
-This software is for educational and testing purposes only. Never use with real funds on mainnet. Cryptocurrency trading involves substantial risk of loss and is not suitable for every investor.
+---
 
+## 📄 License
+
+This project is for **educational purposes only**.
+Use at your own risk.
+
+---
+
+## ⚠️ Disclaimer
+
+This software is for **educational and testing purposes only**.
+Never use with real funds on mainnet.
+Cryptocurrency trading involves substantial risk of loss and is not suitable for every investor.
+
+```
+```
